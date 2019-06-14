@@ -3,7 +3,7 @@ var game = {
   loses: 0,
   remainingGuesses: 0,
   level: 1,
-  alphabet: ['x', 'p', 'd'],
+  alphabet: ['x', 'p', 'd', 'a', 'z', 'w'],
 
   setGuessCount: function () {
     switch (this.level) {
@@ -44,7 +44,6 @@ var game = {
     } else {
       element.textContent = newData;
     }
-
   },
 
   refreshDOM: function () {
