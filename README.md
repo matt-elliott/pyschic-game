@@ -1,1 +1,1 @@
-# pyschic-game
+Repo for the Psychic Letter Guessing Assignment
