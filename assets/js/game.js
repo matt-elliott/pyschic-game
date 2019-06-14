@@ -3,7 +3,7 @@ var game = {
   loses: 0,
   remainingGuesses: 0,
   level: 1,
-  alphabet: ['x','p','d'],
+  alphabet: ['x', 'p', 'd'],
 
   setGuessCount: function () {
     switch (this.level) {
@@ -27,6 +27,12 @@ var game = {
 
     if (this.level > 3) {
       this.endGame('You Are The Winner!');
+
+      setTimeout(function () {
+        game.replay();
+      }, 2500);
+
+      return false;
     } else {
       this.init();
     }
@@ -34,11 +40,11 @@ var game = {
 
   updateDOM: function (element, newData, addon) {
     if (addon) {
-      element.textContent += ` ${newData}`;  
+      element.textContent += ` ${newData}`;
     } else {
       element.textContent = newData;
     }
-    
+
   },
 
   refreshDOM: function () {
@@ -73,18 +79,22 @@ var game = {
     game.die();
     game.updateDOM(document.getElementById('guesses'), e.key, true);
 
-    if (game.remainingGuesses <= 0 &&
-        game.loses > game.wins) {
+    if (game.remainingGuesses === 0 && game.loses > game.wins) {
       game.endGame('YOU LOOSE!');
+
+      setTimeout(function () {
+        game.replay();
+      }, 2500);
+
       return false;
     }
-    
+
     if (game.wins >= game.alphabet.length - 1) {
       game.levelUp();
       return false;
     }
 
-    game.compareString(game.randomLetter, e.key.toLowerCase());  
+    game.compareString(game.randomLetter, e.key.toLowerCase());
     game.refreshDOM();
 
     game.playTime = setTimeout(function () {
@@ -101,11 +111,25 @@ var game = {
     document.removeEventListener('keyup', this.keyUpHandler);
   },
 
+  replay: function () {
+    this.wins = 0;
+    this.loses = 0;
+    this.remainingGuesses = 0;
+    this.level = 1;
+
+    this.updateDOM(document.getElementById('prompt'), `Guess what letter I'm thinking of?`);
+    this.updateDOM(document.getElementById('guesses'), ``);
+    this.updateDOM(document.getElementById('computer-move'), ``);
+    this.updateDOM(document.getElementById('user-move'), ``);
+
+    this.init();
+  },
+
   init: function () {
     this.setGuessCount();
     this.refreshDOM();
     this.play();
-  }
+  },
 }
 document.addEventListener('DOMContentLoaded', function () {
   game.init();
