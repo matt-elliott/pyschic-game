@@ -6,27 +6,39 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Pyschic Game | Guess the Letter!</title>
 
-  <link rel="stylesheet" href="assets/css/styles.css" type="text/css">
   <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css' integrity='sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO' crossorigin='anonymous'>
+  <link href="https://fonts.googleapis.com/css?family=Butcherman|UnifrakturMaguntia&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css" type="text/css">
 </head>
 <body class="bg-dark">
   <aside class="jumbotron bg-dark">
-    <div class="col-xs-12 col-md-6">
-      <h1 class="text-center text-light" id="title">Guess what letter I'm thinking of?</h1>
-      <h3 class="text-left text-light">Computer's Move: <span id="computer-move" class="text-right"></span></h3>
-      <h3 class="text-left text-light">Your move: <span id="user-move" class="text-right"></span></h2>
-    </div>
-    <div class="col-xs-12" id="user-stats">
-      <h2 class="text-left text-light">Level:</h2>
-      <h3 class="text-right text-light" id="level"></h3>
-      <h2 class="text-left text-light">Wins:</h2>
-      <h3 class="text-right text-light" id="wins"></h3>
-      <h2 class="text-left text-light">Losses:</h2>
-      <h3 class="text-right text-light" id="loses"></h3>
-      <h2 class="text-left text-light">Remaining Guesses</h2>
-      <h3 class="text-right text-light" id="remaining-guesses"></h3>
-      <h2 class="text-left text-light">Guesses So Far</h2>
-      <h3 class="text-right text-light" id="guesses"></h3>
+    <header class="row">
+      <div class="col-xs-12 col-md-12">
+        <h1 id="game-title" class="text-center ">The Psychic</h1>
+        <h2 class="text-center" id="prompt">Guess what letter I'm thinking of?</h2>
+      </div>
+    </header>
+    <section id="moves">
+      <dl class="row">
+        <dt class="col-xs-12 col-md-6">Pyschic's Move:</dt>
+        <dd class="col-xs-12 col-md-6" id="computer-move"></dd>
+        <dt class="col-xs-12 col-md-6">Your Move:</dt>
+        <dd class="col-xs-12 col-md-6" id="user-move"></dd>
+      </dl>
+    </section>
+    <section id="stats">
+      <dl class="row">
+        <dt class="col-xs-12 col-md-6">Level:</dt>
+        <dd class="col-xs-12 col-md-6" id="level"></dd>
+        <dt class="col-xs-12 col-md-6">Wins:</dt>
+        <dd class="col-xs-12 col-md-6" id="wins"></dd>
+        <dt class="col-xs-12 col-md-6">Loses:</dt>
+        <dd class="col-xs-12 col-md-6" id="loses"></dd>
+        <dt class="col-xs-12 col-md-6">Remaining Guesses</dt>
+        <dd class="col-xs-12 col-md-6" id="remaining-guesses"></dd>
+        <dt class="col-xs-12 col-md-6">Guesses So Far:</dt>
+        <dd class="col-xs-12 col-md-6" id="guesses"></dd>
+      </dl>
     </div>
   </aside>
 

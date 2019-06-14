@@ -1,0 +1,23 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+}
+#game-title {
+  font-family: 'UnifrakturMaguntia', cursive;
+  font-size: 90px;
+  border-bottom: 10px #fff ridge;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+#moves {
+  margin: 15px 0;
+}
+dl dt,
+dl dd {
+  font-size: 32px;
+  font-weight: normal;
+  margin: 15px 0;
+}
+dl dd {
+  text-align: right;
+}

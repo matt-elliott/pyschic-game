@@ -65,7 +65,7 @@ var game = {
 
   endGame: function (text) {
     this.die();
-    this.updateDOM(document.getElementById('title'), text);
+    this.updateDOM(document.getElementById('prompt'), text);
   },
 
   keyUpHandler: function (e) {
